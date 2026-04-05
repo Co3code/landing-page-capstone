@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+}
+
+body {
+  @apply bg-[#070709] text-[#E0E0E0] antialiased selection:bg-[#FF416C] selection:text-white font-light scroll-smooth;
+}
