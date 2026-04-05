@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const APK_URL = "https://github.com/AIFoundIt/app/releases/latest/download/aifoundit.apk";
+const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.0.1/AIfoundIT-v1.0.1.apk";
 const HERO_VIDEO_URL = "/sample2.mp4"; 
 
 const Navbar = () => {
