@@ -1,12 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Search, 
-  Bell, 
-  ShieldCheck, 
-  MapPin, 
-  Download, 
-  Github, 
-  Twitter, 
+import {
+  Search,
+  Bell,
+  ShieldCheck,
+  MapPin,
+  Download,
+  Github,
+  Twitter,
   Instagram,
   Menu,
   X,
@@ -14,12 +14,12 @@ import {
   CheckCircle,
   Tag,
   FileText,
-  Cpu
+  Cpu,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.0.1/AIfoundIT-v1.0.1.apk";
-const HERO_VIDEO_URL = "/sample2.mp4"; 
+const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.0%2C2/AIfoundIT-v1.0.2.apk";
+const HERO_VIDEO_URL = "/sample2.mp4";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +32,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-[#070709]/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-[#070709]/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-xl font-light tracking-wide text-white">AIFoundIT</span>
@@ -40,8 +42,12 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
-          <a href="#features" className="text-sm font-light text-white/70 hover:text-white transition-colors">features</a>
-          <a href="#how-it-works" className="text-sm font-light text-white/70 hover:text-white transition-colors">how it works</a>
+          <a href="#features" className="text-sm font-light text-white/70 hover:text-white transition-colors">
+            features
+          </a>
+          <a href="#how-it-works" className="text-sm font-light text-white/70 hover:text-white transition-colors">
+            how it works
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -55,13 +61,25 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-full left-0 right-0 bg-[#070709]/95 backdrop-blur-xl border-b border-white/5 p-6 flex flex-col gap-6"
         >
-          <a href="#features" className="text-lg font-light text-white/70 hover:text-white" onClick={() => setIsMobileMenuOpen(false)}>features</a>
-          <a href="#how-it-works" className="text-lg font-light text-white/70 hover:text-white" onClick={() => setIsMobileMenuOpen(false)}>how it works</a>
+          <a
+            href="#features"
+            className="text-lg font-light text-white/70 hover:text-white"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            features
+          </a>
+          <a
+            href="#how-it-works"
+            className="text-lg font-light text-white/70 hover:text-white"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            how it works
+          </a>
         </motion.div>
       )}
     </nav>
@@ -77,13 +95,7 @@ const VideoBanner = () => {
     <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-[#070709] flex items-center justify-center border-b border-white/[0.02]">
       {/* Background Video */}
       <motion.div style={{ y }} className="absolute inset-0 w-full h-full">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover opacity-50 mix-blend-lighten"
-        >
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-50 mix-blend-lighten">
           <source src={HERO_VIDEO_URL} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent pointer-events-none" />
@@ -91,7 +103,7 @@ const VideoBanner = () => {
       </motion.div>
 
       {/* Hero Content */}
-      <motion.div 
+      <motion.div
         style={{ opacity }}
         className="relative z-10 max-w-5xl mx-auto px-4 text-center flex flex-col items-center mt-16"
       >
@@ -104,18 +116,20 @@ const VideoBanner = () => {
           <div className="w-2 h-2 rounded-full bg-[#FF416C] animate-pulse" />
           <span className="text-xs tracking-[0.2em] font-light text-white/80 uppercase">AI-Powered Lost & Found</span>
         </motion.div>
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           className="text-5xl md:text-7xl lg:text-8xl font-thin tracking-tight text-white mb-6 leading-tight"
         >
           lost it? <br />
-          <span className="font-normal bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] text-transparent bg-clip-text">AI will find it.</span>
+          <span className="font-normal bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] text-transparent bg-clip-text">
+            AI will find it.
+          </span>
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
@@ -123,21 +137,21 @@ const VideoBanner = () => {
         >
           A smart lost-and-found platform that uses AI to match lost and found items through image and text similarity.
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center gap-6"
         >
-          <a 
+          <a
             href="#download"
             className="flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] text-white font-normal hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,65,108,0.3)]"
           >
             <Download className="w-5 h-5 stroke-[1.5]" />
             Get the App
           </a>
-          <a 
+          <a
             href="#how-it-works"
             className="flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white/80 font-normal hover:bg-white/10 hover:text-white transition-all shadow-xl"
           >
@@ -154,23 +168,24 @@ const Features = () => {
     {
       icon: <Search className="w-8 h-8 stroke-[1]" />,
       title: "AI Image Matching",
-      description: "Our ResNet-50 neural network analyzes item photos to find visual similarities between lost and found posts."
+      description:
+        "Our ResNet-50 neural network analyzes item photos to find visual similarities between lost and found posts.",
     },
     {
       icon: <Bell className="w-8 h-8 stroke-[1]" />,
       title: "Real-time Notifications",
-      description: "Get instant alerts the moment our AI finds a possible match for your lost or found item."
+      description: "Get instant alerts the moment our AI finds a possible match for your lost or found item.",
     },
     {
       icon: <ShieldCheck className="w-8 h-8 stroke-[1]" />,
       title: "Secure Authentication",
-      description: "Firebase-powered authentication keeps your account and personal information safe and protected."
+      description: "Firebase-powered authentication keeps your account and personal information safe and protected.",
     },
     {
       icon: <Cpu className="w-8 h-8 stroke-[1]" />,
       title: "Hybrid Matching Algorithm",
-      description: "Combines 60% image similarity and 40% text similarity for the most accurate match results."
-    }
+      description: "Combines 60% image similarity and 40% text similarity for the most accurate match results.",
+    },
   ];
 
   return (
@@ -178,7 +193,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-thin text-white mb-6">
-            Powerful <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">Capabilities</span>
+            Powerful{" "}
+            <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">
+              Capabilities
+            </span>
           </h2>
           <p className="text-white/50 font-light max-w-2xl mx-auto text-lg leading-relaxed">
             Built with real AI technology to help reunite lost items with their owners.
@@ -187,7 +205,7 @@ const Features = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, idx) => (
-            <div 
+            <div
               key={idx}
               className="group bg-white/[0.02] border border-white/[0.05] p-8 rounded-3xl hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 hover:-translate-y-1"
             >
@@ -209,18 +227,19 @@ const HowItWorks = () => {
     {
       number: "01",
       title: "Post",
-      description: "Take a photo and describe your lost or found item with its title, category, and location."
+      description: "Take a photo and describe your lost or found item with its title, category, and location.",
     },
     {
       number: "02",
       title: "Match",
-      description: "Our AI combines ResNet-50 image analysis and text similarity to find the best match automatically."
+      description: "Our AI combines ResNet-50 image analysis and text similarity to find the best match automatically.",
     },
     {
       number: "03",
       title: "Connect",
-      description: "Get notified instantly and contact the other user directly through their profile to recover your item."
-    }
+      description:
+        "Get notified instantly and contact the other user directly through their profile to recover your item.",
+    },
   ];
 
   return (
@@ -230,7 +249,9 @@ const HowItWorks = () => {
           <div className="lg:w-1/2">
             <h2 className="text-4xl lg:text-6xl font-thin text-white mb-10">
               three simple <br />
-              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">steps</span>
+              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">
+                steps
+              </span>
             </h2>
             <div className="space-y-12">
               {steps.map((step, idx) => (
@@ -250,13 +271,16 @@ const HowItWorks = () => {
             <div className="aspect-[4/5] rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] p-6 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FF416C]/10 to-[#FF4B2B]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               {/* Replace the URL below with your actual picture URL later! */}
-              <img 
-                src="/meet.jpg" 
-                alt="AIFoundIt App UI" 
+              <img
+                src="/meet.jpg"
+                alt="AIFoundIt App UI"
                 className="w-full h-full object-cover rounded-[2rem] opacity-60 group-hover:opacity-100 transition-opacity duration-700"
               />
               <div className="absolute bottom-10 left-10 right-10 bg-[#070709]/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl">
-                <p className="text-white/80 font-light italic mb-4 leading-relaxed">"I lost my keys at the university library. AIfoundIT matched them with a post from another student almost instantly!"</p>
+                <p className="text-white/80 font-light italic mb-4 leading-relaxed">
+                  "I lost my keys at the university library. AIfoundIT matched them with a post from another student
+                  almost instantly!"
+                </p>
                 <p className="text-[#FF416C] font-normal text-sm tracking-wide uppercase">— Sarah J.</p>
               </div>
             </div>
@@ -273,7 +297,10 @@ const PostingTips = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-thin text-white mb-6">
-            how to post <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">effectively</span>
+            how to post{" "}
+            <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">
+              effectively
+            </span>
           </h2>
           <p className="text-white/50 font-light max-w-2xl mx-auto text-lg leading-relaxed">
             Follow these tips to help our AI find the best match for your item.
@@ -290,13 +317,17 @@ const PostingTips = () => {
               </span>
               <AlertCircle className="w-5 h-5 text-white/20 group-hover:text-[#FF416C] transition-colors" />
             </div>
-            <h3 className="text-2xl font-normal text-white border-b border-white/[0.02] pb-4 mb-4">Black Leather Wallet</h3>
+            <h3 className="text-2xl font-normal text-white border-b border-white/[0.02] pb-4 mb-4">
+              Black Leather Wallet
+            </h3>
             <p className="text-[#FF416C] text-sm mb-6 font-light uppercase tracking-wider">Category: Wallet</p>
-            
+
             <div className="space-y-6">
               <div>
                 <p className="text-white/30 text-xs uppercase tracking-wider mb-2">Description</p>
-                <p className="text-white/70 font-light text-base leading-relaxed">Black leather wallet with ID cards and cash inside. Has a small scratch on the back.</p>
+                <p className="text-white/70 font-light text-base leading-relaxed">
+                  Black leather wallet with ID cards and cash inside. Has a small scratch on the back.
+                </p>
               </div>
               <div>
                 <p className="text-white/30 text-xs uppercase tracking-wider mb-2">Location</p>
@@ -316,13 +347,17 @@ const PostingTips = () => {
               </span>
               <CheckCircle className="w-5 h-5 text-white/20 group-hover:text-green-400 transition-colors" />
             </div>
-            <h3 className="text-2xl font-normal text-white border-b border-white/[0.02] pb-4 mb-4">Found Blue Backpack</h3>
+            <h3 className="text-2xl font-normal text-white border-b border-white/[0.02] pb-4 mb-4">
+              Found Blue Backpack
+            </h3>
             <p className="text-green-400 text-sm mb-6 font-light uppercase tracking-wider">Category: Bag</p>
-            
+
             <div className="space-y-6">
               <div>
                 <p className="text-white/30 text-xs uppercase tracking-wider mb-2">Description</p>
-                <p className="text-white/70 font-light text-base leading-relaxed">Found a blue Jansport backpack near the entrance. Contains books and a water bottle.</p>
+                <p className="text-white/70 font-light text-base leading-relaxed">
+                  Found a blue Jansport backpack near the entrance. Contains books and a water bottle.
+                </p>
               </div>
               <div>
                 <p className="text-white/30 text-xs uppercase tracking-wider mb-2">Location</p>
@@ -343,7 +378,9 @@ const PostingTips = () => {
             </div>
             <div>
               <h4 className="text-lg font-normal text-white/90 mb-1">Title</h4>
-              <p className="text-white/40 font-light text-sm leading-relaxed">Be specific about the item name and color</p>
+              <p className="text-white/40 font-light text-sm leading-relaxed">
+                Be specific about the item name and color
+              </p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -352,7 +389,9 @@ const PostingTips = () => {
             </div>
             <div>
               <h4 className="text-lg font-normal text-white/90 mb-1">Description</h4>
-              <p className="text-white/40 font-light text-sm leading-relaxed">Include unique details like brand, color, contents, markings</p>
+              <p className="text-white/40 font-light text-sm leading-relaxed">
+                Include unique details like brand, color, contents, markings
+              </p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -361,11 +400,12 @@ const PostingTips = () => {
             </div>
             <div>
               <h4 className="text-lg font-normal text-white/90 mb-1">Location</h4>
-              <p className="text-white/40 font-light text-sm leading-relaxed">Be as specific as possible like building name, floor, area</p>
+              <p className="text-white/40 font-light text-sm leading-relaxed">
+                Be as specific as possible like building name, floor, area
+              </p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -380,23 +420,27 @@ const CTA = () => {
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
         <h2 className="text-4xl md:text-6xl font-thin text-white mb-8">
           Ready to find <br className="md:hidden" />
-          <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">what's yours?</span>
+          <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FF416C] to-[#FF4B2B]">
+            what's yours?
+          </span>
         </h2>
         <p className="text-xl text-white/40 font-light mb-12 max-w-lg">
           Install AIFoundIt on your Android device today and let AI help reunite you with your lost items.
         </p>
-        <a 
+        <a
           href={APK_URL}
           className="inline-flex items-center gap-3 bg-white text-[#070709] px-10 py-5 rounded-full text-lg font-medium hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.1)] mb-8"
         >
           <Download className="w-5 h-5 stroke-[2]" />
           Download Android APK
         </a>
-        
+
         <div className="max-w-lg mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-center">
           <p className="text-white/50 font-light text-sm leading-relaxed">
-            <span className="text-white/80 font-normal">Note:</span> This app is not yet available on Google Play Store. <br />
-            Before installing, please enable <span className="text-[#FF416C]">"Install from unknown sources"</span> <br />
+            <span className="text-white/80 font-normal">Note:</span> This app is not yet available on Google Play Store.{" "}
+            <br />
+            Before installing, please enable <span className="text-[#FF416C]">"Install from unknown sources"</span>{" "}
+            <br />
             in your Android Settings &rarr; Security &rarr; Unknown Sources.
           </p>
         </div>
@@ -412,20 +456,33 @@ const Footer = () => {
         <div className="flex items-center gap-3">
           <span className="text-white/50 font-light tracking-wide text-sm">AIfoundIT © {new Date().getFullYear()}</span>
         </div>
-        
+
         <div className="flex gap-8 text-sm font-light text-white/40">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" className="hover:text-white transition-colors">
+            Privacy Policy
+          </a>
+          <a href="#" className="hover:text-white transition-colors">
+            Terms of Service
+          </a>
         </div>
 
         <div className="flex gap-4">
-          <a href="#" className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all">
+          <a
+            href="#"
+            className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all"
+          >
             <Twitter className="w-4 h-4 stroke-[1.5]" />
           </a>
-          <a href="#" className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all">
+          <a
+            href="#"
+            className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all"
+          >
             <Instagram className="w-4 h-4 stroke-[1.5]" />
           </a>
-          <a href="#" className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all">
+          <a
+            href="#"
+            className="w-10 h-10 rounded-full bg-white/[0.02] border border-white/[0.05] flex items-center justify-center text-white/40 hover:text-[#FF416C] hover:bg-white/5 transition-all"
+          >
             <Github className="w-4 h-4 stroke-[1.5]" />
           </a>
         </div>
